@@ -1,0 +1,35 @@
+<div>
+  <mat-toolbar>
+    <span>Create user</span>
+    <span class="example-spacer"></span>
+    <mat-icon id="close-icon" fxFlex (click)="closeDialog()" fxLayoutAlign="end end">close</mat-icon>
+  </mat-toolbar>
+</div>
+
+<br>
+<div>
+  <span style="font-size: 16px">Fill the fields and register the form</span>
+</div>
+<br>
+
+<form class="form" [formGroup]="createUserForm"  (ngSubmit)="createUser(); myForm.resetForm()" #myForm="ngForm" >
+  <input class="input" type="text" placeholder="name" formControlName="name">
+  <input class="input" type="number" min="1" max="125" placeholder="age" formControlName="age">
+  <input class="input" type="email" placeholder="email" formControlName="email">
+  <input class="input" type="password" placeholder="password" formControlName="password">
+  <mat-select  placeholder="Select" class="input" formControlName="role">
+    <mat-option *ngFor="let item of dataSource" [value]="item.name">
+      {{item.name}}
+    </mat-option>
+  </mat-select>
+
+  <br>
+  <br>
+
+  <div class="containerButtons">
+    <button mat-icon-button type="submit" class="Buttons" (click)="createUser()">Create</button>
+  </div>
+</form>
+
+
+

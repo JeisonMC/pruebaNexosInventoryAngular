@@ -1,0 +1,43 @@
+<div>
+  <mat-toolbar>
+    <span>Details changes product</span>
+    <span class="example-spacer"></span>
+    <mat-icon id="close-icon" fxFlex (click)="closeDialog()" fxLayoutAlign="end end">close</mat-icon>
+  </mat-toolbar>
+</div>
+
+<br>
+<br>
+
+<div>
+  <span style="font-size: 16px">Select a user to continue</span>
+</div>
+
+<br>
+<br>
+
+<div>
+  <table>
+    <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Origin user</th>
+      <th>person Modifications</th>
+      <th>Admission Date</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let doc of dataSource; let i = index;">
+      <td>{{i+1}}</td>
+      <td>{{doc.name}}</td>
+      <td>{{doc.quantity}}</td>
+      <td>{{doc.originUserId}}</td>
+      <td>{{doc.personModifications}}</td>
+      <td>{{doc.admissionDate}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

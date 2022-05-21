@@ -1,0 +1,56 @@
+<div>
+  <mat-toolbar>
+    <span>System Inventory</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" (click)="openDialogSelect()">Select user</button>
+    <button mat-icon-button class="example-icon favorite-icon" (click)="openDialogRegister()">Create user</button>
+    <button mat-icon-button class="example-icon" (click)="openDialogRole()">Create role</button>
+  </mat-toolbar>
+</div>
+
+<br>
+<br>
+<div>
+  <div style="text-align:center">
+    <span style="font-size: 20px"> List Inventory </span>
+  </div>
+  <div style="text-align:center">
+    <button mat-icon-button class="Buttons2" (click)="openDialogInventory()">create inventory</button>
+  </div>
+</div>
+<br>
+<br>
+
+<div align="center">
+  <table>
+    <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>admissionDate</th>
+      <th>Acción</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let item of dataSource; let i = index;">
+      <td>{{i+1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.admissionDate}}</td>
+      <td>
+        <button class = Buttons (click)="openDialogUpdateInventory(item)">Modificar</button>
+      </td>
+      <td>
+        <button class = Buttons (click)="deleteInventory(item.id)">Eliminar</button>
+      </td>
+      <td>
+        <button class = Buttons (click)="openDialogDetailsInventory(item.id)">Detalles</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+

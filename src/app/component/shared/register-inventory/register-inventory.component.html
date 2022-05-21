@@ -1,0 +1,28 @@
+<div>
+  <mat-toolbar>
+    <span>Create Inventory</span>
+    <span class="example-spacer"></span>
+    <mat-icon id="close-icon" fxFlex (click)="closeDialog()" fxLayoutAlign="end end">close</mat-icon>
+  </mat-toolbar>
+</div>
+
+<br>
+<div>
+  <span style="font-size: 16px">Fill the fields and register the product</span>
+</div>
+<br>
+
+<form class="form" [formGroup]="registerForm" (ngSubmit)="createInventory(); myForm.resetForm()" #myForm="ngForm">
+  <input class="input" type="text" placeholder="name" formControlName="name">
+  <input class="input" type="number" min="0" placeholder="quantity" formControlName="quantity">
+  <input class="input" type="date" [max]=findDate() placeholder="admission_date" formControlName="date">
+
+  <br>
+  <br>
+
+  <div class="containerButtons">
+    <button mat-icon-button type="submit" class="Buttons">Create</button>
+  </div>
+</form>
+
+

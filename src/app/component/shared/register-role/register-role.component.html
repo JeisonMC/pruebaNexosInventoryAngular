@@ -1,0 +1,28 @@
+<div>
+  <mat-toolbar>
+    <span>Create role</span>
+    <span class="example-spacer"></span>
+    <mat-icon id="close-icon" fxFlex (click)="closeDialog()" fxLayoutAlign="end end">close</mat-icon>
+  </mat-toolbar>
+</div>
+
+<br>
+<div>
+  <span style="font-size: 16px">Fill the fields and register the role</span>
+</div>
+<br>
+
+<form class="form" [formGroup]="createRoleForm" (ngSubmit)="createRole(); myForm.resetForm()" #myForm="ngForm">
+  <input class="input" type="text" placeholder="name" formControlName="name">
+
+  <br>
+  <br>
+
+  <div class = "containerButtons">
+    <button mat-icon-button type="submit"  class="Buttons">Create</button>
+  </div>
+</form>
+
+
+
+

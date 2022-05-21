@@ -1,0 +1,41 @@
+<div>
+  <mat-toolbar style="text-align: center">
+    <span >Select user</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+</div>
+
+<br>
+<br>
+
+<div>
+  <span style="font-size: 16px">Select a user to continue</span>
+</div>
+
+<br>
+<br>
+
+<div>
+  <table>
+    <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>age</th>
+      <th>Acción</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let doc of dataSource; let i = index;">
+      <td>{{i+1}}</td>
+      <td>{{doc.name}}</td>
+      <td>{{doc.email}}</td>
+      <td>{{doc.age}}</td>
+      <td>
+        <button class=Buttons (click)="changeUser(doc.personId)">Select</button>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
